@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "name": "Generate PPTX file",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "filename": "string",
+        "fileBase64": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
