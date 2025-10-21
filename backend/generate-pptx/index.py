@@ -83,33 +83,26 @@ def handler(event, context):
         title_para.font.color.rgb = industrial_copper
         title_para.font.name = 'Oswald'
         
-        y_pos = 1.5
+        y_pos = 1.8
         for item in items:
-            card_box = slide.shapes.add_textbox(Inches(0.5), Inches(y_pos), Inches(9), Inches(1.6))
+            card_box = slide.shapes.add_textbox(Inches(0.5), Inches(y_pos), Inches(9), Inches(1.0))
             card_frame = card_box.text_frame
             card_frame.word_wrap = True
             
             heading = card_frame.paragraphs[0]
             heading.text = item['heading']
-            heading.font.size = Pt(20)
+            heading.font.size = Pt(24)
             heading.font.bold = True
             heading.font.color.rgb = industrial_copper
             heading.font.name = 'Oswald'
             
             subheading = card_frame.add_paragraph()
             subheading.text = item['subheading']
-            subheading.font.size = Pt(14)
+            subheading.font.size = Pt(16)
             subheading.font.color.rgb = industrial_light
             subheading.font.name = 'Open Sans'
             
-            desc = card_frame.add_paragraph()
-            desc.text = item['description']
-            desc.font.size = Pt(12)
-            desc.font.color.rgb = white
-            desc.font.name = 'Open Sans'
-            desc.space_before = Pt(6)
-            
-            y_pos += 1.8
+            y_pos += 1.4
         
         return slide
     
